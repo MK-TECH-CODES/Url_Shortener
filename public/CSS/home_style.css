@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("\\image\\background.jpg");
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  background-color: rgb(6, 6, 34);
+  margin: 0;
+}
+
+.spinner-border {
+  display: none; /* Hide spinner initially */
+  width: 1rem; /* Size of the spinner */
+  height: 1rem; /* Size of the spinner */
+  margin-right: 0.5rem; /* Space between spinner and text */
+}
+
+.wrapper {
+  width: 420px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+.wrapper .heading {
+  font-size: 15px;
+  text-align: center;
+  color: white;
+}
+
+.wrapper .heading #Logo_img {
+  width: 200px;
+  height: 120px;
+}
+
+.wrapper .input_field {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+  /* background-color: green; */
+}
+
+.input_field input {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  outline: none;
+  border-radius: 40px;
+  color: white;
+  padding: 20px 45px 20px 60px;
+  font-size: 20px;
+}
+
+.input_field input::placeholder {
+  color: white;
+}
+
+.input_field i {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.wrapper .submit_button {
+  width: 100%;
+  height: 45px;
+  background: white;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  font-size: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  color: rgb(36, 100, 126);
+  font-weight: 600px;
+}
+
+.wrapper .submit_button:hover {
+  background-color: rgb(13, 154, 63);
+  color: white;
+}
+
+.wrapper .link_wrapper {
+  display: none;
+  flex-wrap: wrap;
+  margin: 30px 0;
+  gap: 10px;
+}
+
+.wrapper .link_wrapper .shorten_url {
+  box-sizing: border-box;
+  width: fit-content;
+  border: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  outline: none;
+  border-radius: 40px;
+  padding: 15px 15px 15px 15px;
+  font-size: 18px;
+  background-color: white;
+}
+
+.wrapper .link_wrapper .copy_icon {
+  width: fit-content;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.wrapper .link_wrapper .copy_icon:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.wrapper .link_wrapper .view_url {
+  flex: 1 1 100%; /* Takes up 100% width of the parent container */
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(2, 1fr); /* Create 2 equal columns */
+  grid-gap: 10px; /* Space between buttons */
+  margin-top: 10px;
+}
+
+.wrapper .shorten_url_error {
+  display: none;
+  box-sizing: border-box;
+  margin-top: 20px;
+  /* width: fit-content; */
+  /* align-items: center; */
+  text-align: center;
+  border: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  outline: none;
+  border-radius: 40px;
+  padding: 15px 15px 15px 15px;
+  color: red;
+  font-size: 20px;
+  background-color: white;
+}
+
+/* Share dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 20px;
+  margin-top: 5px;
+}
+
+.dropdown-content button {
+  min-width: 160px;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  color: rgb(36, 100, 126);
+  font-size: 20px;
+}
+
+.dropdown-content button:hover {
+  color: white;
+  background-color: rgb(13, 154, 63);
+}
+
+.show {
+  display: block;
+}
+
+/* Or Dropdown */
+.dropdown-content-Qr {
+  display: none;
+  position: relative;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 5px;
+
+  /* Centering styles */
+  left: 50%;
+  transform: translateX(-50%); /* This keeps it centered horizontally */
+}
+.Qr_action_btn {
+  flex: 1 1 100%;
+  display: none;
+  grid-template-columns: repeat(2, 1fr); /* Create 2 equal columns */
+  grid-gap: 10px; /* Space between buttons*/
+  margin-top: 10px;
+}
+.show {
+  display: block;
+}
+.link_wrapper .Qr_action_btn .cancel_btn {
+  min-width: 160px;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  color: rgb(36, 100, 126);
+  font-size: 20px;
+}
+
+.link_wrapper .Qr_action_btn .cancel_btn:hover {
+  color: white;
+  background-color: rgb(206, 42, 42);
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .wrapper {
+    width: 380px;
+    margin: 20px;
+    padding: 15px 20px;
+  }
+
+  .wrapper .heading {
+    font-size: 16px;
+  }
+
+  .input_field input {
+    font-size: 16px;
+  }
+
+  .input_field i {
+    font-size: 18px;
+  }
+
+  .wrapper .link_wrapper .shorten_url {
+    font-size: 15px;
+  }
+}

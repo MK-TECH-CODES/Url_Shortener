@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="A fast and reliable URL shortening service."
+    />
+    <meta
+      name="keywords"
+      content="URL shortener, shorten links, free URL shortening, Qr code Generator"
+    />
+    <meta name="author" content="Zaptian" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Open Graph Meta Tags (for social media) -->
+    <meta
+      property="og:title"
+      content="Shorten your links quickly and easily!"
+    />
+    <meta
+      property="og:description"
+      content="Use our URL shortener to reduce the length of your URLs."
+    />
+    <meta property="og:url" content="https://url.zaptian.com" />
+    <meta property="og:type" content="website" />
+    <!-- <meta
+      property="og:image"
+      content="https://your-url-shortener.com/images/og-image.jpg"
+    /> -->
+
+    <!-- Twitter Card Meta Tags (for Twitter sharing) -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Shorten your links!" />
+    <meta
+      name="twitter:description"
+      content="Use our URL shortener to make your URLs shorter and more manageable."
+    />
+    <!-- <meta
+      name="twitter:image"
+      content="https://your-url-shortener.com/images/twitter-image.jpg"
+    /> -->
+    <title>Link - Zaptian</title>
+
+    <!-- CDN Link -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+    />
+
+    <!-- Style Link -->
+    <link rel="stylesheet" href="CSS/home_style.css" />
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon" />
+
+    <!-- BootStrap -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    /> -->
+  </head>
+  <body>
+    <div class="wrapper">
+      <form id="urlForm" method="post">
+        <div class="heading">
+          <img id="Logo_img" src="image/logo.png" alt="Logo" />
+          <h1>Url Shortener</h1>
+        </div>
+        <div class="input_field">
+          <input
+            type="text"
+            id="user_url"
+            name="user_url"
+            placeholder="Enter url"
+          /><i class="fa-light fa-link" style="color: rgb(255, 255, 255)"></i>
+        </div>
+        <div>
+          <button id="get_url_btn" type="submit" class="submit_button">
+            <div
+              class="spinner-border"
+              role="status"
+              id="spinnerIcon"
+              style="display: none"
+            >
+              <i class="fa-duotone fa-solid fa-spinner-third fa-spin"></i>
+            </div>
+            <span id="buttonText"
+              ><i class="fa-solid fa-arrow-right-to-line">&nbsp;&nbsp;</i>Get
+              Url</span
+            >
+          </button>
+        </div>
+
+        <div class="shorten_url_error">
+          <h4 id="error_display" for="url_error"></h4>
+        </div>
+      </form>
+
+      <div class="link_wrapper">
+        <div class="shorten_url">
+          <h4 id="short_url" for="url"></h4>
+        </div>
+        <div>
+          <button class="copy_icon" type="button" id="copyButton">
+            <i class="fa-light fa-clipboard" id="clipboardIcon"></i>
+            <i
+              class="fa-solid fa-badge-check"
+              id="checkIcon"
+              style="display: none"
+            ></i>
+          </button>
+          <!-- <i class="fa-light fa-clipboard"></i> -->
+          <!-- <i class="fa-solid fa-badge-check"></i> -->
+        </div>
+
+        <!-- QR code View -->
+        <div id="Qr_myDropdown" class="dropdown-content-Qr">
+          <img src="" alt="QR Code" id="qrCodeImage" />
+        </div>
+        <div id="Qr_action_btn" class="Qr_action_btn">
+          <button
+            type="button"
+            class="submit_button cancel_btn"
+            id="cancel_btn"
+          >
+            <i class="fa-solid fa-xmark-large">&nbsp;&nbsp;</i>
+            Cancel
+          </button>
+          <button type="button" class="submit_button" id="download_btn">
+            <i class="fa-solid fa-cloud-arrow-down">&nbsp;</i>
+            Download
+          </button>
+        </div>
+
+        <!-- URL Visit -->
+        <div class="view_url">
+          <button
+            type="button
+          "
+            class="submit_button"
+            id="visit_btn"
+          >
+            <i class="fa-solid fa-square-up-right">&nbsp;</i>
+            Visit
+          </button>
+
+          <button type="button" class="submit_button" id="new_url_btn">
+            <i class="fa-regular fa-square-plus">&nbsp;&nbsp;</i>
+            New Url
+          </button>
+
+          <div class="dropdown">
+            <button type="button" class="submit_button" id="share_url_btn">
+              <i class="fa-regular fa-share-nodes">&nbsp;</i> Share
+            </button>
+
+            <div id="myDropdown" class="dropdown-content">
+              <button id="whatsapp_btn">
+                <i id="share_icon_social" class="fa-brands fa-square-whatsapp"
+                  >&nbsp;&nbsp;</i
+                >Whatsapp
+              </button>
+              <button id="linkedin_btn">
+                <i id="share_icon_social" class="fa-brands fa-linkedin"
+                  >&nbsp;&nbsp;</i
+                >LinkedIn
+              </button>
+              <button id="twitter_btn">
+                <i id="share_icon_social" class="fa-brands fa-square-x-twitter"
+                  >&nbsp;&nbsp;</i
+                >Twitter
+              </button>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button
+              type="button"
+              class="submit_button OR_button"
+              id="create_Qr_code_btn"
+            >
+              <i class="fa-regular fa-qrcode">&nbsp;</i>
+              Qr Code
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="JS/url_shortener.js"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "url_shortener",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "Url shortener",
+    "QR Generator"
+  ],
+  "author": "Mukesh Kumar M",
+  "license": "ISC",
+  "description": "Make the url to memories for the user",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "inquirer": "^11.1.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.1.7",
+    "qr-image": "^3.2.0",
+    "valid-url": "^1.0.9"
+  }
+}
