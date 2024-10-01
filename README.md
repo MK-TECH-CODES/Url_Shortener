@@ -2,7 +2,7 @@
 
 A simple and efficient URL shortener that converts long URLs into short, shareable links with tracking features.
 
-![Alt text](./public/image/logo.png)
+[![Alt text](./public/image/Zaptian_banner_black.png)](https://zaptian.com)
 
 ## Features
 
